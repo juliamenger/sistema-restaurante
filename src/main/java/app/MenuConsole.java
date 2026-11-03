@@ -111,7 +111,54 @@ public class MenuConsole {
             }
             add = adicionarAdicional();
         }
-
         return adicionais;
+    }
+
+    public int lerOpcaoIngrediente() {
+        System.out.println("Qual ingrediente deseja retirar? \n 1 - Queijo \n 2 - Alface \n 3 - Tomate \n 4 - Cebola");
+        int ingrediente = sc.nextInt();
+        sc.nextLine();
+        return ingrediente;
+    }
+
+    public ArrayList<Boolean> lerIngredientes() {
+        ArrayList<Boolean> ingredientes = new ArrayList<>();
+
+        ingredientes.add(true);
+        ingredientes.add(true);
+        ingredientes.add(true);
+        ingredientes.add(true);
+
+        int opcaoIngrediente = 1;
+
+        System.out.println("Deseja retirar algum ingrediente? \n 1 - Sim \n 2 - Não");
+        opcaoIngrediente = sc.nextInt();
+        sc.nextLine();
+
+        while (opcaoIngrediente == 1) {
+            int ingrediente = lerOpcaoIngrediente();
+
+        switch (ingrediente) {
+            case 1:
+                ingredientes.set(0, false);
+                break;
+            case 2:
+                ingredientes.set(1, false);
+                break;
+            case 3:
+                ingredientes.set(2, false);
+                break;
+            case 4:
+                ingredientes.set(3, false);
+                break;
+            default:
+        }
+
+        System.out.println("Deseja retirar outro ingrediente? \n 1 - Sim \n 2 - Não");
+        opcaoIngrediente = sc.nextInt();
+        sc.nextLine();
+
+        }
+        return ingredientes;
     }
 }

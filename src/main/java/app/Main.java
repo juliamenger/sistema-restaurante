@@ -25,7 +25,7 @@ public class Main {
                     int lanche = menu.lerOpcaoLanche();
                     ArrayList<Integer> adicionais = menu.lerAdicionais();
 
-                    facade.adicionarLanche(lanche, adicionais, pedido);
+                    facade.adicionarLanche(lanche, adicionais, menu.lerIngredientes(), pedido);
 
                     //perguntando se quer adicionar outro lanche ao pedido
                     int opcaoAdd = -1;
@@ -37,7 +37,7 @@ public class Main {
                         int novoLanche = menu.lerOpcaoLanche();
                         ArrayList<Integer> novosAdicionais = menu.lerAdicionais();
 
-                        facade.adicionarLanche(novoLanche, novosAdicionais, pedido);
+                        facade.adicionarLanche(novoLanche, novosAdicionais, menu.lerIngredientes(), pedido);
                         }
                     }
                     break;

@@ -14,7 +14,7 @@ public class RestauranteFacade {
         return gerenciador.criarPedido(nomeCliente);
     }
 
-    public void adicionarLanche(int lanche, ArrayList<Integer> adicionais, Pedido pedido) {
+    public void adicionarLanche(int lanche, ArrayList<Integer> adicionais, ArrayList<Boolean> ingredientes, Pedido pedido) {
 
         Lanche novoLanche;
         ItemCardapio itemCardapio;
@@ -32,6 +32,20 @@ public class RestauranteFacade {
             default:
                 throw new IllegalArgumentException("Opção inválida");
         }
+
+        if (!ingredientes.get(0)) {
+            novoLanche.setQueijo(false);
+        }
+        if (!ingredientes.get(1)) {
+            novoLanche.setAlface(false);
+        }
+        if (!ingredientes.get(2)) {
+            novoLanche.setTomate(false);
+        }
+        if (!ingredientes.get(3)) {
+            novoLanche.setCebola(false);
+        }
+
         //Aplicando o Decorator(adicional) escolhido
         itemCardapio = novoLanche;
         for (int adicional : adicionais) {
@@ -49,6 +63,7 @@ public class RestauranteFacade {
         }
         pedido.adicionarItem(itemCardapio);
     }
+
 
         public HashMap<Integer, Pedido> listarPedidos () {
             return gerenciador.getPedidos();
