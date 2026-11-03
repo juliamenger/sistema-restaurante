@@ -31,7 +31,9 @@ Foram utilizados testes unitários com **JUnit 5** para verificar funcionalidade
 
 - Java
 - JUnit 5
-
-  Vídeo: https://drive.google.com/file/d/1Y9KpsZWnR3f5AnzX0vGi1cblj4XIP5v2/view?usp=drive_link
 - IntelliJ IDEA
+
+## Vídeo da apresentação:
+
+https://drive.google.com/file/d/1Y9KpsZWnR3f5AnzX0vGi1cblj4XIP5v2/view?usp=drive_link
 
